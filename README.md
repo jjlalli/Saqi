@@ -69,8 +69,7 @@ a few real nodes on the family farm.
 
 ## AI use
 
-I used AI assistants to help write and debug the code and to draft the paper. The idea, the
-design choices, and the direction are mine; the tools were for speeding things up. (Moonshot
+I used AI assistants to help debug the code. (Moonshot
 allows AI as a tool as long as the thinking is human.)
 
 ## License

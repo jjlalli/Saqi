@@ -45,27 +45,45 @@ I compare Saqi against a naive timer (equal split) and a "cloud" controller that
 
   ![scaling](saqi_scaling.png)
 
+## From deciding to doing
+
+The part above decides *who* gets water. Building toward real nodes raised the next question it
+skipped: once a valve opens, when does it close? Water enters at the emitter and takes time to
+reach the root zone, so the sensor lags. A node that waits until its probe reads the target
+overshoots, because the water already in the soil keeps arriving after the valve shuts, and the
+surplus drains past the roots and is wasted. The fix is to stop on *committed* water (moisture
+already there plus water still in transit), which is what it means for a node to be smart: it has
+to judge the whole root zone, not one lagging point. With a shared pump, a satisfied zone closes
+its valve and signals done, freeing the pump for the next thirsty neighbour.
+
+![control](saqi_control_stop.png)
+
+![hand-off](saqi_control_cluster.png)
+
 ## Running it
 
 ```bash
 pip install -r requirements.txt
 python3 saqi.py          # the main comparison -> saqi_demo.png
 python3 experiments.py   # resilience + scaling -> saqi_resilience.png, saqi_scaling.png
+python3 control.py       # the watering loop -> saqi_control_stop.png, saqi_control_cluster.png
 ```
 
 ## What's in here
 
 - `saqi.py`: the model and the three strategies (naive / cloud / Saqi)
 - `experiments.py`: the resilience and scaling experiments
+- `control.py`: the watering control loop (when to open and close each valve)
 - `*.png`: the figures
 - `Saqi Moonshot Paper.pdf`: the full write-up
 
 ## Limitations
 
-It's a simulation with a simple soil/weather model, and it tests the decision-making, not the
-actual plumbing (I assume each node can draw its own share of water locally). A real version
-would need cheap hardware, soil calibration, and a season of field tests. Next step is to build
-a few real nodes on the family farm.
+It's a simulation with a simple soil/weather model. The allocation tests the decision-making, not
+the plumbing, and the control loop in `control.py` is a first pass at the watering itself with a
+deliberately simple soil model. A real version would need cheap hardware, soil calibration (the
+transit rate, field capacity, and drying come from real probes), and a season of field tests.
+Next step is to build a few real nodes on the family farm and calibrate the loop against them.
 
 ## AI use
 

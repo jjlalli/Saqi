@@ -1,5 +1,7 @@
 # Saqi
 
+**This research continues in [Saqi v2](https://github.com/jjlalli/Saqi-v2)** — same allocation logic, re-aimed at zones and one controller after field interviews.
+
 Decentralized, offline water-sharing for olive groves. A simulation I built for the
 Moonshot 2026 hackathon.
 

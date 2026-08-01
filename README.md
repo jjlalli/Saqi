@@ -1,7 +1,10 @@
 # Saqi
 
-Decentralized, offline water-sharing for olive groves. A simulation I built for the
-Moonshot 2026 hackathon.
+Decentralized, offline water-sharing for olive groves.
+
+Saqi started in summer 2025, watching how my family's grove in Sidi Bou Zid was
+irrigated. This simulation of its allocation idea was built for the Moonshot 2026
+hackathon (Top 100 Finalist); the work continues in [Saqi v2](https://github.com/jjlalli/Saqi-v2).
 
 The question behind it is simple: when a farm doesn't have enough water for every plant, who
 gets it? The usual answer in "smart farming" is a cloud server that watches the whole farm and

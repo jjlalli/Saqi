@@ -2,14 +2,14 @@
 
 Decentralized, offline water-sharing for olive groves.
 
-Saqi started in summer 2025, watching how my family's grove in Sidi Bou Zid was
-irrigated. This simulation of its allocation idea was built for the Moonshot 2026
-hackathon (Top 100 Finalist); the work continues in [Saqi v2](https://github.com/jjlalli/Saqi-v2)
-— same allocation logic, re-aimed at zones and one controller after field interviews.
+Saqi started in summer 2025, watching how my family's grove in Sidi Bouzid was
+irrigated. This simulation of its allocation idea was built for the Moonshot 2026 hackathon
+(Top 100). [Saqi v2](https://github.com/jjlalli/Saqi-v2) continues it: the same allocation
+logic, re-aimed at zones and one controller, with a first field test.
 
 The question behind it is simple: when a farm doesn't have enough water for every plant, who
 gets it? The usual answer in "smart farming" is a cloud server that watches the whole farm and
-decides. But I'm from an olive-farming family in Sidi Bou Zid, Tunisia, and the tools I kept reading
+decides. But I'm from an olive-farming family in Sidi Bouzid, Tunisia, and the tools I kept reading
 about all assume Wi-Fi, grid power, and money, none of which our kind of farm has. So I wanted
 to test the opposite idea: no server at all.
 
@@ -79,7 +79,8 @@ python3 control.py       # the watering loop -> saqi_control_stop.png, saqi_cont
 - `experiments.py`: the resilience and scaling experiments
 - `control.py`: the watering control loop (when to open and close each valve)
 - `*.png`: the figures
-- `Saqi Moonshot Paper.pdf`: the full write-up
+- `Saqi Moonshot Paper.pdf`: the write-up (`.docx` source alongside)
+- `Saqi_Vision_Pitch.pdf`: the Moonshot pitch deck
 
 ## Limitations
 
@@ -87,12 +88,11 @@ It's a simulation with a simple soil/weather model. The allocation tests the dec
 the plumbing, and the control loop in `control.py` is a first pass at the watering itself with a
 deliberately simple soil model. A real version would need cheap hardware, soil calibration (the
 transit rate, field capacity, and drying come from real probes), and a season of field tests.
-Next step is to build a few real nodes on the family farm and calibrate the loop against them.
+The hardware continues in Saqi v2.
 
 ## AI use
 
-I used AI assistants to help debug the code. (Moonshot
-allows AI as a tool as long as the thinking is human.)
+AI assistants helped write and debug the code and edit the write-up. The ideas are mine.
 
 ## License
 
